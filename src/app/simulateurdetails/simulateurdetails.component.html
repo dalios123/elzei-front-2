@@ -1,0 +1,282 @@
+  <body >
+    <app-navigate></app-navigate>
+    <router-outlet></router-outlet>
+  <div id="dataexel"><br>
+
+  <div class="login-wrap1">
+    <div class="login-html">
+  <label  class="tab">input</label>
+      <div class="login-form">
+
+
+
+          <div class="group">
+            <div class="container2">
+            <td>
+              <label for="cout" class="label">Coût de gestion</label>
+              <div class="input-group">
+              <input name="cout" type="" class="input"  id="cout" min="0" max="100" [value]="selectedSimulateur?.cout" disabled >
+              <span class="percent-symbol">%</span>
+
+
+                  </div> </td>
+              </div>
+              </div>
+              <br>
+          <div class="group">
+            <div class="container2">
+              <td>
+            <label for="tjm" class="label">TJM</label>
+            <div class="input-container"> <input name="tjm" type="text" class="input" id="tjm" [value]="selectedSimulateur?.tjm" disabled>
+                </div> </td>
+              <td>
+            <label for="qt" class="label">QT</label>
+            <div class="input-container"> <input name="qt" type="text" class="input" id="qt" [value]="selectedSimulateur?.qt" disabled>
+                </div> </td>
+              <td>
+            <label for="facture_ht" class="label">Facture HT</label>
+            <div class="input-container"> <input name="facture_ht" type="text" class="input" id="facture_ht" [value]="selectedSimulateur?.factureHt" disabled>
+                </div> </td>
+              <td>
+            <label for="dispo" class="label">Dispo </label>
+            <div class="input-container"> <input name="dispo" type="text" class="input" id="dispo" [value]="selectedSimulateur?.dispo" disabled>
+                </div> </td>
+          </div>
+          </div>
+          <div class="group">
+            <div class="container2">
+              <td>
+            <label for="astreintes" class="label">Astreintes</label>
+            <div class="input-container"> <input id="astreintes" type="text" class="input" id="astreintes" [value]="selectedSimulateur?.astreintes" disabled>
+                </div> </td>
+              <td>
+            <label for="qt2" class="label"></label>
+            <div class="input-container"> <input  type="text" class="input" id="qt2" [value]="selectedSimulateur?.qt2" disabled>
+                </div> </td>
+              <td>
+            <label for="factureHt3" class="label"></label>
+            <div class="input-container"> <input  type="text" class="input" id="factureHt3" [value]="selectedSimulateur?.factureHt3" disabled>
+                </div> </td>
+              <td>
+            <label for="factureHt3" class="label"></label>
+            <div class="input-container"> <input type="text" class="input" id="dispo2" [value]="selectedSimulateur?.dispo2" disabled>
+                </div> </td>
+          </div>
+          </div>
+          <div class="group">
+            <div class="container2">
+              <td>
+            <label for="Autres" class="label">Autres </label >
+            <div class="input-container"> <input id="Autres" type="text" class="input" [value]="selectedSimulateur?.autres" disabled>
+                </div> </td>
+              <td>
+            <label for="qt3" class="label"></label>
+            <div class="input-container"> <input id="qt3" type="text" class="input" [value]="selectedSimulateur?.qt3" disabled>
+                </div> </td>
+              <td>
+            <label for="factureHt3" class="label"></label>
+            <div class="input-container"> <input id="factureHt3" type="text" class="input" [value]="selectedSimulateur?.factureHt3" disabled>
+                </div> </td>
+              <td>
+            <label for="dispo3" class="label"></label>
+            <div class="input-container"> <input id="dispo3" type="text" class="input" [value]="selectedSimulateur?.dispo3" disabled >
+                </div> </td>
+          </div>
+          </div>
+          <div class="group">
+            <div class="container2">
+              <td>
+            <label for="totalDISPOO" class="label">Total Dispo</label>
+            <div class="input-container"> <input id="totalDISPOO" type="text" class="input" [value]="selectedSimulateur?.totalDISPOO" disabled >
+                </div> </td>
+          </div>
+          </div>
+            <br>
+        </div>
+        </div>
+        </div>
+
+
+  <br>
+  <br>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="login-wrap2">
+    <div class="login-html">
+    <label for="tab-1" class="tab">Salaire et charge</label>
+
+      <div class="login-form">
+
+      <h2>Salaire et Frais</h2>
+        <div class="group">
+          <div class="container">
+            <td>
+          <label for="BrutAnn" class="label">Brut Ann</label>
+          <div class="input-container"> <input id="BrutAnn" type="text" class="input" [value]="selectedSimulateur?.brutAnn" disabled>
+              </div> </td>
+            <td>
+          <label for="SalaireBrut" class="label">Salaire Brut</label>
+          <div class="input-container"> <input id="SalaireBrut" type="text" class="input" [value]="selectedSimulateur?.salaireBrut" disabled>
+              </div> </td>
+            <td>
+          <label for="SalaireNetHorsPAS" class="label">Salaire Net Hors PAS</label>
+          <div class="input-container"> <input id="SalaireNetHorsPAS" type="text" class="input" [value]="selectedSimulateur?.salaireNetHorsPAS" disabled>
+              </div> </td>
+            <td>
+          <label for="FraisRepas" class="label">Frais Repas</label>
+          <div class="input-container"> <input id="FraisRepas" type="text" class="input" [value]="selectedSimulateur?.fraisRepas" disabled>
+              </div> </td>
+            <td>
+          <label for="FraisKilo" class="label">Frais Kilo</label>
+          <div class="input-container"> <input id="FraisKilo" type="text" class="input" [value]="selectedSimulateur?.fraisKilo" disabled>
+              </div> </td>
+            <td>
+              <label for="Autresfraissurfacture" class="label">Autres frais sur facture</label>
+              <div class="input-container"> <input id="Autresfraissurfacture" type="text" class="input" [value]="selectedSimulateur?.autresFraisSurFacture" disabled>
+                  </div> </td>
+            <td>
+          <label for="totalPercuHorsExtra" class="label">Total Perçu Hors Extra</label>
+          <div class="input-container"> <input id="totalPercuHorsExtra" type="text" class="input" [value]="selectedSimulateur?.totalPercuHorsExtra" disabled>
+              </div> </td>
+        </div>
+        </div>
+
+
+          <h2>Charge et Annexes</h2>
+
+                  <tr >
+                      <td><label for="MedécinedeTravail">Medécine de Travail</label>  </td>
+                      <td> <div class="input-container"> <input class='tabb' id="MedécinedeTravail"  type="text" name="MedécinedeTravail" [value]="selectedSimulateur?.medecineDeTravail" disabled>   </div> </td>
+                  </tr>
+
+                  <tr>
+                      <td><label for="taxeDapprentissage">Taxe D'apprentissage</label>    </td>
+                      <td> <div class="input-container"> <input class='tabb' type="text" id="taxeDapprentissage" name="taxeDapprentissage" [value]="selectedSimulateur?.taxeDapprentissage" disabled >   </div> </td>
+                  </tr>
+                  <tr>
+                      <td><label for="Adessat">Adessat</label>    </td>
+                      <td> <div class="input-container"> <input class='tabb' type="text" id="Adessat" name="Adessat" [value]="selectedSimulateur?.adessat" disabled>   </div> </td>
+                  </tr>
+                  <tr>
+                    <td><label for="taxeCCI">Taxe CCI</label>    </td>
+                    <td> <div class="input-container"> <input class='tabb' type="text" id="taxeCCI" name="taxeCCI" [value]="selectedSimulateur?.taxeCCI" disabled >   </div> </td>
+                </tr>
+                <tr>
+                  <td><label for="continuue">continue</label>   </td>
+                  <td> <div class="input-container"> <input class='tabb' type="text" id="continuue" name="continuue" [value]="selectedSimulateur?.continuue" disabled >   </div> </td>
+              </tr>
+                <tr>
+                  <td><label for="AssuranceRespCivile">Assurance. Resp. Civile</label>    </td>
+                  <td> <div class="input-container"> <input class='tabb' type="text" id="AssuranceRespCivile" name="AssuranceRespCivile" [value]="selectedSimulateur?.assuranceRespCivile" disabled>   </div> </td>
+              </tr>
+              <tr>
+                <td><label for="ComplémMutOp1">Complém Mut Op1</label>    </td>
+                <td> <div class="input-container"> <input class='tabb' type="text" id="ComplémMutOp1" name="FraisKilo" [value]="selectedSimulateur?.complementMutOp1" disabled>   </div> </td>
+            </tr>
+                  <tr>
+                      <td><label for="cvaeSurCAgenere">CVAE sur CA généré (Prorata)</label>   </td>
+                      <td> <div class="input-container"> <input class='tabb' type="text" id="cvaeSurCAgenere" name="cvaeSurCAgenere" [value]="selectedSimulateur?.cvaeSurCAgenere" disabled >   </div> </td>
+                  </tr>
+        <br>
+
+
+      <h2>Charges sur Salaire</h2>
+      <div class="group">
+          <div class="container">
+              <td>
+            <label for="chargesPatronalesURSSAF" class="label">Charges Patronales URSSAF</label>
+            <div class="input-container"> <input id="chargesPatronalesURSSAF" type="text" id="chargesPatronalesURSSAF" name="chargesPatronalesURSSAF" class="input" [value]="selectedSimulateur?.chargesPatronalesURSSAF" disabled>
+                </div> </td>
+              <td>
+            <label for="chargesSalariales" class="label">Charges Salariales</label>
+            <div class="input-container"> <input id="chargesSalariales" type="text" class="input" [value]="selectedSimulateur?.chargesSalariales" disabled>
+                </div> </td>
+              <td>
+                <label for="chargesPatronalesAnn" class="label">Charges
+                  Patronales Ann
+                  (TA, ADESSAT, FP, MT, DADS, RC..)</label>
+                <div class="input-container"> <input id="chargesPatronalesAnn" type="text" class="input" [value]="selectedSimulateur?.chargesPatronalesAnn" disabled >
+                </div> </td>
+          </div>
+          </div><br>
+        <div class="group">
+          <div class="container">
+          <td>
+            <label for="CoutTotal" class="label">Coût Total</label>
+            <div class="input-container"> <input id="CoutTotal" type="text" class="input" [value]="selectedSimulateur?.coutTotal" disabled >
+            </div> </td>
+        </div>
+      </div>
+
+  </div>
+  </div>
+  </div>
+  <br>
+  <br>
+
+
+
+
+
+
+
+
+  <div class="login-wrap3">
+    <div class="login-html">
+    <label for="tab-1" class="tab"></label>
+      <div class="login-form">
+
+
+          <div class="group">
+            <div class="container">
+              <td>
+            <label for="solde" class="label">solde</label>
+            <div class="input-container"> <input id="solde" type="text" class="input" [value]="selectedSimulateur?.solde" disabled>
+                </div> </td>
+              <td>
+            <label for="totalPercu" class="label">totalPercu</label>
+            <div class="input-container"> <input id="totalPercu" type="text" class="input" [value]="selectedSimulateur?.totalPercu" disabled>
+                </div> </td>
+          </div>
+          </div>
+          <div class="group">
+            <div class="container">
+              <td>
+            <label for="extraPossibleHorsPAS" class="label">Extra Possible Hors PAS</label>
+            <div class="input-container"> <input id="extraPossibleHorsPAS" type="text" class="input" [value]="selectedSimulateur?.extraPossibleHorsPAS" disabled >
+                </div> </td>
+          </div>
+          </div> <br>
+
+
+
+
+          <div class="button-container">
+            <div class="button" data-tooltip="Excel">
+              <div class="button-wrapper">
+                <div class="text">Télécharger</div>
+                <span class="icon">
+                  <button type="submit" class="button" (click)="exportexcel()">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17" (click)="exportexcel()"></path>
+                    </svg>
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+          </div>
+
+  </div>
+  </div>
+  </div>
+  </body>

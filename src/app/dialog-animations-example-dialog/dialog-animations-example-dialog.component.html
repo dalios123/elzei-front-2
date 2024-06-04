@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Supprimer !</h2>
+<mat-dialog-content *ngIf="mission === null">
+  Souhaitez-vous supprimer {{data.libelle}}{{data.nom}} {{data.prenom}} {{data.codemission}}  ?
+</mat-dialog-content>
+<mat-dialog-content *ngIf="mission != null && data.matricule">
+  tu peut pas supprimer cette salaries car il est liée a la mission {{mission.codemission}}  ?
+</mat-dialog-content>
+<mat-dialog-content *ngIf="mission != null && data.matricule===undefined">
+  tu peut pas supprimer ce Client car il est liée a la mission {{mission.codemission}}  ?
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div mat-dialog-actions class="d-flex justify-content-center" *ngIf="mission === null">
+    <button  mat-button [mat-dialog-close]="true" cdkFocusInitial style="background-color: #7ed957;" center>confirmer</button>
+  </div>
+  <div mat-dialog-actions class="d-flex justify-content-center">
+    <button  mat-button [mat-dialog-close]="false"  style="background-color: #ED1B24;" center>annuler</button>
+  </div>
+</mat-dialog-actions>

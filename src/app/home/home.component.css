@@ -1,0 +1,297 @@
+
+.percent-symbol {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjust as needed */
+  transform: translateY(-50%);
+}
+.input-group {
+  position: relative;
+  display: inline-block; /* Ensures the container size fits its contents */
+	border-radius: 5px;
+
+}
+.percent-symbol {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjust as needed */
+  transform: translateY(-50%);
+}
+
+@keyframes myAnimation {
+  100% { background-position: 0% 50%; } /* Start from the left side */
+  100% { background-position: 100% 50%; } /* Move to the right side */
+}
+body {
+  /*background-image: radial-gradient(at 300px 300px, rgba(60, 201, 95, 0.5) 0, #E9FFDB 70%), url('C:/Users/DELL/OneDrive/Desktop/ELZI/elzeifront/src/assets/final.jpg');*/
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keep the background fixed while scrolling */
+  background-size: cover;
+  height: 100vh; /* Set height to 100% of viewport height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  animation: myAnimation 30s linear infinite alternate;
+}
+
+.container2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin-right: 0px;
+  grid-gap: 20px;
+  margin-left: 100px;
+  border-radius:10px;
+}
+.pos {
+  float: right;
+}
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin-right: 0px;
+  grid-gap: 20px;
+  margin-left: 10px;
+	border-radius: 5px;
+}
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+.login-wrap1{
+  width:100%;
+  margin:auto;
+  max-width:1300px;
+  min-height:730px;
+  position:relative;
+	border-radius: 5px;
+
+  box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-wrap2{
+  width:100%;
+  margin:auto;
+  max-width:1300px;
+  min-height:960px;
+  position:relative;
+  box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+	border-radius: 5px;
+
+}
+.login-wrap3{
+  width:100%;
+  margin:auto;
+  max-width:1300px;
+  min-height:430px;
+  position:relative;
+  box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+	border-radius: 5px;
+
+}
+.login-html{
+  width:100%;
+  height:100%;
+  position:absolute;
+  padding:90px 70px 50px 70px;
+  background-color: rgba(255, 255, 255, 0.87);
+	border-radius: 5px;
+
+
+
+}
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+  display:none;
+
+}
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+  font-family: Arial, sans-serif;
+}
+.login-html .tab{
+  font-size:22px;
+  margin-right:15px;
+  padding-bottom:5px;
+  margin:0 15px 10px 0;
+  display:inline-block;
+
+}
+.login-form{
+  min-height:345px;
+  position:relative;
+  perspective:1000px;
+  transform-style:preserve-3d;
+}
+.login-form .group{
+  margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+  width:100%;
+  color:#000000;
+  display:block;
+}
+.login-form .group .input,
+.login-form .group .button{
+  border:none;
+  padding:15px 20px;
+	border-radius: 5px;
+  background:rgba(82, 71, 71, 0.2);
+}
+.tabb{
+  border:none;
+  padding:5px 8px;
+	border-radius: 5px;
+  background:rgba(82, 71, 71, 0.2);
+}
+.login-form .group .label{
+  color:#000000;
+  font-size:14px;
+  margin-bottom: .3rem;
+}
+.login-form .group .button{
+  background: rgb(40, 196, 79);
+  background-image: linear-gradient(to right,#5da92f,#9bd46a);
+  border: none;
+  width: 170px; /* Set the width of the button */
+  height: 50px; /* Set the height of the button */
+  font-size: 15px
+
+}
+.login-form .group .button:before {
+  height: 0%;
+  width: 2px;
+
+}
+.login-form .group .button:hover {
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .5),
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+.login-form .group label .icon{
+  width:15px;
+  height:15px;
+  border-radius:10px;
+  position:relative;
+  display:inline-block;
+  background:rgba(255,255,255,.1);
+
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+  content:'';
+  width:10px;
+  height:2px;
+  background:#fff;
+  position:absolute;
+  transition:all .2s ease-in-out 0s;
+
+}
+.login-form .group label .icon:before{
+  left:3px;
+  width:5px;
+  bottom:6px;
+  transform:scale(0) rotate(0);
+
+}
+.login-form .group label .icon:after{
+  top:6px;
+  right:0;
+  transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+  color:#fff;
+}
+.login-form .group .check:checked + label .icon{
+  background:#243044;
+}
+.login-form .group .check:checked + label .icon:before{
+  transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+  transform:scale(1) rotate(-45deg);
+}
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+  transform:rotate(0);
+}
+.foot-lnk{
+  text-align:center;
+}
+
+
+
+th, td {
+  border: 1% ;
+  padding: 2px;
+}
+
+
+h2 {
+  font-size: 20px; /* Adjust the font size as needed */
+  color: #6bcc41;
+  ; /* Set the text color */
+  margin-top: 20px; /* Add top margin */
+  margin-bottom: 10px; /* Add bottom margin */
+  margin-left: 1%;
+}
+
+
+
+
+
+
+
+
+
+
+.input-container {
+  position: relative;
+  display: inline-block;
+}
+
+.input-container .input {
+  padding-left: 20px; /* Adjust this value based on the width of the euro sign */
+}
+
+.input-container::before {
+  content: '€';
+  position: absolute;
+  right: 15px; /* Adjust the position as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000; /* Adjust the color as needed */
+  font-size: 16px; /* Adjust the font size as needed */
+}
+
+
+
+/*button*/
+button {
+  font-family: monospace;
+  background-color: #7ed957;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  width: 100px;
+  height: 45px;
+  transition: .3s;
+  width: 170px; /* Set the width of the button */
+  height: 50px; /* Set the height of the button */
+  font-size: 15px;
+  position: absolute; /* Set the position to absolute */
+  bottom: 60px; /* Set the distance from the bottom */
+  right: 250px; /* Set the distance from the right */
+  left: 85%;
+  font-family: "HelveticaNeueLT Std Lt Cn", Sans-serif;
+}
+
+button:hover {
+  background-color: #71C34E;
+  color: #000000;
+}

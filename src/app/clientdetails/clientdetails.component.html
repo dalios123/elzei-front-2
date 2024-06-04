@@ -1,0 +1,67 @@
+
+<body>
+    <app-navigate></app-navigate>
+ <br>
+  <form [formGroup]="myForm" class='myfor'>
+
+<div class="login-wrap1">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Client</label>
+    <div class="login-form">
+<br><br>
+<tr>
+    <td>
+            <div class="group">
+            <label  class="label" for="libelle">Libellé:</label><br>
+            <input class="input" type="text" id="libelle" name="libelle" formControlName="libelle" [value]="selectedClient?.libelle"  required  ><br>
+        </div>
+    </td>
+<td>
+        <div class="group">
+            <label  class="label" for="numtva">Numéro TVA:</label><br>
+            <input class="input" type="text" id="numtva" name="numtva" formControlName="numtva" [value]="selectedClient?.numtva"  required><br>
+        </div>
+      </td>
+     </tr>
+        <label  class="label" for="pays">Pays:</label><br><br>
+        <div class="countrys">
+            <mat-select-country class="input" formControlName="pays"
+                                (onCountrySelected)="onCountrySelected($event)">
+            </mat-select-country>
+          </div><br><br>
+         <tr>
+
+
+            <td>
+                <div class="group">
+                    <label  class="label" for="address">Adresse:</label><br>
+
+                  <td>
+
+                    <input class="input" type="text"  id="ville" name="ville" placeholder="Ville" formControlName="ville"[(ngModel)]="ville" ><br>
+                </td>
+                 <td>
+                    <input class="input" type="text"  id="rue" name="rue"  placeholder="Rue"  formControlName="rue" [(ngModel)]="rue"><br>
+                </td>
+                 <td>
+                    <input class="input" type="text" id="codePostal" name="codePostal" placeholder="Code-Postal"[(ngModel)]="codePostal" formControlName="codePostal" ><br>
+                </td>
+
+
+                </div>
+
+            </td>
+
+</tr>
+<br><br>
+        <button class="group"  (click)="save()">
+          Modifier
+           </button>
+        </div>
+    </div>
+  </div>
+
+
+
+</form>
+</body>

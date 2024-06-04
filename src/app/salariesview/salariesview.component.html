@@ -1,0 +1,285 @@
+
+
+
+
+<body>
+
+  <app-navigate></app-navigate>
+  <br>
+
+  <form [formGroup]="myForm" class='myfor'>
+    <div class="login-wrap1">
+      <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Salarie</label >
+        <div class="login-form">
+
+
+                      <tr>
+                        <td>
+                        <div class="group">
+                        <label class="label" for="prenom">Prénom:</label>
+                        <input  class="input" type="text" name="prenom" formControlName="prenom" [value]="selectedSalaries?.prenom" required readonly readonly>
+                        </div>
+                      </td>
+                    <td>
+                        <div class="group">
+                        <label class="label" for="nom">Nom:</label>
+                        <input class="input"  type="text" name="nom" formControlName="nom" [value]="selectedSalaries?.nom" required readonly>
+                        </div>
+                      </td>
+                    <td>
+                          <div class="group">
+                        <label class="label" for="dateNaiss">dateNaiss:</label>
+                        <input class="input"  type="date" name="dateNaiss" formControlName="dateNaiss" [value]="selectedSalaries?.dateNaiss" required readonly readonly>
+                          </div>
+                    </td>
+                      </tr>
+
+
+
+                      <!--<label class="label" for="pays">Pays:</label>-->
+
+                          <!-- <div class="countrys">
+                            <mat-select-country class="input"   (onCountrySelected)="onCountrySelected($event)">
+                            </mat-select-country>
+                          </div> -->
+
+
+                          <!--<mat-form-field appearance="fill" >
+                            <mat-label>Country</mat-label>
+                            <mat-select [value]="selectedCountry"  (change)="onCountrySelected(selectedCountry)">
+                              <mat-option *ngFor="let country of countries" [value]="country.value">
+                                {{ country.viewValue }}
+                              </mat-option >
+                            </mat-select>
+                          </mat-form-field>-->
+
+
+                          <tr>
+                            <label  class="label" for="pays" style="padding-left: 10px; padding-right: 1px;">Pays:</label><br>
+                            <div class="countrys">
+                                <mat-select-country class="input" formControlName="pays" style="padding-left: 10px; padding-right: 1px;"
+                                                    (onCountrySelected)="onCountrySelected($event)">
+                                </mat-select-country>
+                              </div>
+
+                        </tr>
+
+
+
+                          <td>
+                            <div class="group">
+                                <label  class="label" for="adresse">Adresse:</label><br>
+
+                              <td>
+
+                                <input class="input" type="text"  style="padding-left: 10px; padding-right: 1px;" id="ville" name="ville" placeholder="Ville" formControlName="ville"[(ngModel)]="ville" ><br>
+                            </td>
+                             <td>
+                                <input class="input" type="text" style="padding-left: 10px; padding-right: 1px;" id="rue" name="rue"  placeholder="Rue"  formControlName="rue" [(ngModel)]="rue"><br>
+                            </td>
+                             <td>
+                                <input class="input" type="text" style="padding-left: 10px; padding-right: 1px;" id="codePostal" name="codePostal" placeholder="Code-Postal"[(ngModel)]="codePostal" formControlName="codePostal" ><br>
+                            </td>
+                            </div>
+
+                        </td>
+
+
+
+
+                      <tr>
+                        <td>
+                        <div class="group">
+                        <label class="label" for="matricule" style="padding-left: 10px; padding-right: 1px;">Matricule:</label>
+                        <input class="input" style="padding-left: 10px; padding-right: 1px;" type="text" name="matricule" formControlName="matricule" [value]="selectedSalaries?.matricule" required readonly readonly>
+                        </div>
+                      </td>
+                      <td>
+                          <div class="group">
+                        <label class="label" for="numSS">NumSS:</label>
+                        <input class="input"  type="text" name="numSS" formControlName="numSS" [value]="selectedSalaries?.numSS" required readonly>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="group">
+                              <label class="label" for="emploi">Emploi:</label>
+                              <input class="input"  type="text" name="emploi" formControlName="emploi" [value]="selectedSalaries?.emploi" required readonly>
+                            </div>
+                          </td>
+                      </tr>
+
+                      <tr>
+                        <td style="padding-left: 15px; padding-right: 27px;">
+                        <div class="group">
+                      <label class="label" for="dateEntre">Date d'entrée:</label>
+                      <input class="input" type="date" name="dateEntre" formControlName="dateEntre" [value]="selectedSalaries?.dateEntre" required readonly>
+                      </div>
+                    </td>
+                  <td>
+                        <div class="group">
+                        <label class="label" for="dateSortie">Date de sortie:</label>
+                        <input class="input"  type="date" name="dateSortie" formControlName="dateSortie" [value]="selectedSalaries?.dateSortie" required readonly>
+                      </div>
+                    </td>
+                      </tr>
+
+
+
+                      <tr>
+                        <td>
+                          <div class="group">
+                        <label class="label" for="position">Position:</label>
+
+                            <input class="input"  type="text" name="position" formControlName="position" [value]="selectedSalaries?.position" required
+                                (input)="updateCoefficient($event)" readonly>
+
+
+                      </div>
+                    </td>
+                        <td>
+                        <div class="group">
+                      <label  class="label" for="coefficient">coefficient:</label>
+
+                          <ng-container *ngIf="coefficientOptions.length> 0; else coefInput">
+                              <select name="coefficient" formControlName="coefficient" class='custom-select'>
+                                  <option *ngFor="let option of coefficientOptions" [value]="option">{{ option }}</option>
+                              </select>
+                          </ng-container>
+                          <ng-template #coefInput>
+                              <input class="input"  type="text" name="coefficient" formControlName="coefficient" [value]="selectedSalaries?.coefficient" required readonly>
+                          </ng-template>
+
+                        </div>
+                      </td>
+                      <td>
+                        <div class="group">
+                      <label class="label" for="statut">Statut:</label>
+
+                        <textarea class="input"  type="text" name="statut" formControlName="statut" autocomplete="off" readonly  [value]="selectedSalaries?.statut" required readonly></textarea>
+                        <span *ngIf="myForm.get('statut')?.errors?.['paragraph']" class="paragraph">{{ myForm.get('statut')?.errors?.['paragraph'] }}</span>
+
+
+                        </div>
+                      </td>
+
+                      </tr>
+
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+            <section>
+
+<!-- Upload File Icon and Input -->
+<label class="btn btn-link" title="Upload fiche de paie">
+  <i class="fa fa-upload"></i>
+  <input type="file" (change)="uploadpdf($event,selectedSalaries?.id)" style="display: none;" #fileInput />
+</label>
+
+
+
+
+
+
+
+
+
+
+
+              <!--for demo wrap-->
+              <h1>Historique des Fiches de paie</h1>
+              <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <thead>
+                    <tr>
+                      <th>Matricule</th>
+                      <th>Periode</th>
+                      <th>NumSS</th>
+                      <th>Chpatroniales</th>
+                      <th>Nom</th>
+                      <th>Emploi</th>
+                      <th>Statut</th>
+                      <th>Coefficient</th>
+                      <th>Total des cotisations</th>
+                      <th>Net a payer avant impot</th>
+                      <th>Salairebrut</th>
+                      <th>Netpaye</th>
+                      <th>Action</th>
+
+
+
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr *ngFor="let f of pdfs" >
+                      <td>{{ f.matricule }}</td>
+                      <td>{{ f.periode }}</td>
+                      <td>{{ f.numSS }}</td>
+                      <td>{{ f.chpatroniales }}</td>
+                      <td>{{ f.nom }}</td>
+                      <td>{{ f.emploi }}</td>
+                      <td>{{ f.statut }}</td>
+                      <td>{{ f.coefficient }}</td>
+                      <td>{{ f.totaldescotisationsetcontributions }}</td>
+                      <td>{{ f.netapayeravantimpotsurlerevenu }}</td>
+                      <td>{{ f.salairebrut }}</td>
+                      <td>{{ f.netpaye }}</td>
+
+                      <td>
+
+
+
+
+
+
+                        <div class="input-div" style="font-size:20px;color:blue">
+                          <input id="fileInput" name="file" (click)="downloadJustificatif(selectedSalaries)" accept="application/pdf" style="display:none;">
+                          <label for="fileInput">
+                            <svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round" fill="none" stroke-width="2" stroke="#008000" height="24" width="24" viewBox="0 0 24 24">
+                              <path d="M12 3v12m0 0l-6-6m6 6l6-6M5 19h14" />
+                            </svg>
+                          </label>
+                        </div>
+
+
+
+
+                      </td>
+
+
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </form>
+
+        </body>
+
+
+

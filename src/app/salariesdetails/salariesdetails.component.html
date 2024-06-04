@@ -1,0 +1,189 @@
+
+
+
+
+<body>
+
+  <app-navigate></app-navigate>
+  <br>
+  <br>
+  <br>
+  <br>
+  <form [formGroup]="myForm" class='myfor'>
+    <div class="login-wrap1">
+      <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Salarie</label>
+        <div class="login-form">
+
+
+                      <tr>
+                        <td>
+                        <div class="group">
+                        <label class="label" for="prenom">Prénom:</label>
+                         <input  class="input" type="text" name="prenom" formControlName="prenom" [value]="selectedSalaries?.prenom" required>
+                        </div>
+                      </td>
+                    <td>
+                        <div class="group">
+                        <label class="label" for="nom">Nom:</label>
+                        <input class="input"  type="text" name="nom" formControlName="nom" [value]="selectedSalaries?.nom" required>
+                        </div>
+                      </td>
+                    <td>
+                          <div class="group">
+                        <label class="label" for="dateNaiss">dateNaiss:</label>
+                         <input class="input"  type="date" name="dateNaiss" formControlName="dateNaiss" [value]="selectedSalaries?.dateNaiss" required >
+                          </div>
+                    </td>
+                      </tr><br>
+
+
+                      <tr>
+
+
+
+
+                      </tr>
+                    <tr>
+                      <label  class="label" for="pays" style="padding-left: 10px; padding-right: 1px;">Pays:</label><br>
+                      <div class="countrys">
+                          <mat-select-country class="input" formControlName="pays" style="padding-left: 10px; padding-right: 1px;"
+                                              (onCountrySelected)="onCountrySelected($event)">
+                          </mat-select-country>
+                        </div>
+
+                  </tr>
+
+
+
+
+                  <tr>
+
+
+                    <td>
+                        <div class="group">
+                            <label  class="label" for="adresse" style="padding-left: 10px; padding-right: 1px;">Adresse:</label>
+
+                          <td>
+
+                            <input class="input" type="text" style="padding-left: 10px; padding-right: 1px;" id="ville" name="ville" placeholder="Ville" formControlName="ville"[(ngModel)]="ville" >
+                        </td>
+                         <td>
+                            <input class="input" type="text" style="padding-left: 10px; padding-right: 1px;" id="rue" name="rue"  placeholder="Rue"  formControlName="rue" [(ngModel)]="rue">
+                        </td>
+                         <td>
+                            <input class="input" type="text" style="padding-left: 10px; padding-right: 1px;" id="codePostal" name="codePostal" placeholder="Code-Postal"[(ngModel)]="codePostal" formControlName="codePostal" >
+                        </td>
+                        </div>
+
+                    </td>
+
+        </tr>
+
+
+
+
+                      <tr>
+                        <td>
+                        <div class="group">
+                        <label class="label" for="matricule" style="padding-left: 10px; padding-right: 1px;">Matricule:</label>
+                         <input class="input"  type="text" style="padding-left: 10px; padding-right: 1px;" name="matricule" formControlName="matricule" [value]="selectedSalaries?.matricule" required>
+                        </div>
+                      </td>
+
+                      <td>
+                          <div class="group">
+                        <label class="label" for="numSS">NumSS:</label>
+                         <input class="input"  type="text" name="numSS" formControlName="numSS" [value]="selectedSalaries?.numSS" required>
+                            </div>
+                          </td>
+
+                          <td>
+                            <div class="group">
+                              <label class="label" for="emploi">Emploi:</label>
+                               <input class="input"  type="text" name="emploi" formControlName="emploi" [value]="selectedSalaries?.emploi" required>
+                            </div>
+                          </td>
+                      </tr>
+                      <br>
+                      <tr>
+                        <td style="padding-left: 15px; padding-right: 27px;">
+                        <div class="group">
+                      <label class="label" for="dateEntre">Date d'entrée:</label>
+                       <input class="input" type="date" name="dateEntre" formControlName="dateEntre" [value]="selectedSalaries?.dateEntre" required>
+                      </div>
+                    </td>
+                  <td>
+                        <div class="group">
+                        <label class="label" for="dateSortie">Date de sortie:</label>
+                         <input class="input"  type="date" name="dateSortie" formControlName="dateSortie" [value]="selectedSalaries?.dateSortie" required>
+                      </div>
+                    </td>
+                      </tr>
+                      <br>
+
+                  <br>
+
+
+                      <tr>
+
+
+                        <td>
+                          <div class="group">
+                        <label class="label" for="position">Position:</label>
+
+                            <input class="input"  type="text" name="position" formControlName="position" [value]="selectedSalaries?.position" required
+                                (input)="updateCoefficient($event)">
+
+
+                      </div>
+                    </td>
+                        <td>
+                        <div class="group">
+                      <label  class="label" for="coefficient">coefficient:</label>
+
+                          <ng-container *ngIf="coefficientOptions.length> 0; else coefInput">
+                              <select name="coefficient" formControlName="coefficient" class='custom-select'>
+                                  <option *ngFor="let option of coefficientOptions" [value]="option">{{ option }}</option>
+                              </select>
+                          </ng-container>
+                          <ng-template #coefInput>
+                              <input class="input"  type="text" name="coefficient" formControlName="coefficient" [value]="selectedSalaries?.coefficient" required>
+                          </ng-template>
+
+                        </div>
+                      </td>
+                       <td>
+                        <div class="group">
+                      <label class="label" for="statut">Statut:</label>
+
+                        <textarea class="input"  type="text" name="statut" formControlName="statut" autocomplete="off"   [value]="selectedSalaries?.statut" required></textarea>
+                        <span *ngIf="myForm.get('statut')?.errors?.['paragraph']" class="paragraph">{{ myForm.get('statut')?.errors?.['paragraph'] }}</span>
+
+
+                        </div>
+                      </td>
+
+                      </tr>
+                      <br>
+                      <br>
+                      <button (click)="updateSalary()">
+                        Modifier
+                      </button>
+
+
+
+
+                </div>
+              </div>
+
+
+
+            </div>
+
+
+          </form>
+          <br>
+
+
+          </body>

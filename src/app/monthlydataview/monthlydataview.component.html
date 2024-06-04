@@ -1,0 +1,240 @@
+
+<body>
+  <app-navigate></app-navigate>
+  <br>
+  <br>
+  <br>
+  <br>
+  <form [formGroup]="myForm" class='myfor' (ngSubmit)="submitForm()">
+
+
+<div class="login-wrap1">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Data</label>
+    <div class="login-form">
+<br>
+
+
+<tr>
+  <td style="padding-right: 20px;">
+  <label class="label" class="form-label" for="salariesid"> Salaries : </label>
+  <select class="input" id="salariesid" class="form-input"  (change)="chosesalaries($event)" formControlName="salariesid" required>
+    <option value="all">Toutes les salaries</option>
+    <option *ngFor="let salaries of Salariess" [value]="salaries.id" (keyup)="submitForm()">{{salaries.prenom }}</option>
+</select>
+</td>
+
+
+<td style="padding-right: 20px;">
+  <label class="label" > Mission : </label>
+     <div >
+       <div >
+         <div >
+           <tr>
+            <div class="input output-padding" >
+              <output  id="missionid" formControlName="missionid">{{ selectedMissionsalaries?.codemission}}</output><br>
+            </div>
+         </tr>
+       </div>
+     </div>
+   </div>
+ </td>
+
+
+ <td>
+  <label class="label" for="craid"> CRA : </label>
+  <select class="input" id="craid" class="form-input" formControlName="craid" (change)="chosedCra($event)" required>
+    <option value="all">Toutes les cras</option>
+    <option *ngFor="let CRA of cras" [value]="CRA.id">{{ CRA.mois }}</option>
+</select>
+</td>
+</tr>
+<br>
+
+
+
+
+<tr>
+
+ <td style="padding-left: 10px; padding-right: 1px;">
+  <div class="group">
+     <label  class="label"  for="FraisRepas">Frais Repas:</label>
+     <input  class="input" type="text" formControlName="fraisrepas" (keyup)="submitForm()"  required>
+  </div>
+</td>
+
+
+
+
+ <td style="padding-left: 10px; padding-right: 1px;">
+  <div class="group">
+     <label  class="label"  for="fraiskilo">Frais Kilo:</label>
+     <input  class="input" type="text" formControlName="fraiskilo" (keyup)="submitForm()"  required>
+  </div>
+</td>
+
+<td style="padding-left: 10px; padding-right: 1px;">
+  <div class="group">
+     <label  class="label"  for="chargesalarial">Charge Salarial:</label>
+     <input  class="input" type="text" formControlName="chargesalarial" (keyup)="submitForm()"  required>
+  </div>
+</td>
+<td >
+  <div class="group">
+     <label  class="label"  for="autre">Autre:</label>
+     <input  class="input" type="text" formControlName="autre" (keyup)="submitForm()"  required>
+  </div>
+</td>
+
+</tr>
+<br>
+
+
+
+
+
+
+<tr>
+  <td style="padding-left: 10px; padding-right: 1px;">
+    <label  class="label"  for="mois">Mois:</label><br>
+       <div class="gray-input">
+         <div class="text-box">
+           <div class="text-area">
+             <tr>
+             <output class="input"  formControlName="CRA">{{selectedCRA?.mois}}</output><br>
+           </tr>
+         </div>
+       </div>
+     </div>
+   </td>
+<td style="padding-left: 10px; padding-right: 1px;">
+  <label  class="label"  for="tjm">TJM:</label><br>
+     <div class="gray-input">
+       <div class="text-box">
+         <div class="text-area">
+           <tr>
+           <output class="input" type="text" formControlName="tjm"  id="tjm" (keyup)="submitForm()">{{selectedMissionsalaries?.tjm}}</output><br>
+         </tr>
+       </div>
+     </div>
+   </div>
+ </td>
+ <td style="padding-left: 10px; padding-right: 1px;">
+  <label  class="label"  for="nbjour">Nombre de jours:</label><br>
+     <div class="gray-input">
+       <div class="text-box">
+         <div class="text-area">
+           <tr>
+           <output class="input" type="text" formControlName="nbjour" id="nbjour" (keyup)="submitForm()">{{selectedCRA?.nbjour}}</output><br>
+         </tr>
+       </div>
+     </div>
+   </div>
+ </td>
+
+ <td style="padding-left: 10px; padding-right: 1px;">
+  <label  class="label"  for="facture" >Facture:</label>
+  <div class="group">
+    <div class="gray-input2">
+      <div >
+        <div class="text-area">
+     <input  class="input" type="text" formControlName="facture" (keyup)="submitForm()"  required readonly>
+  </div>
+</div>
+</div>
+</div>
+</td>
+
+</tr>
+<br>
+<tr>
+  <td style="padding-left: 9px; padding-right: 1px;">
+    <label  class="label"  for="mois">Salaire Brut:</label><br>
+       <div class="gray-input">
+         <div class="text-box">
+           <div class="text-area">
+             <tr>
+             <output class="input" formControlName="Salairebrut">{{pdfssalaries?.salairebrut}}</output><br>
+           </tr>
+         </div>
+       </div>
+     </div>
+   </td>
+
+<td style="padding-left: 10px; padding-right: 10px;">
+  <label  class="label"  for="netpaye">Salaire Net:</label><br>
+     <div class="gray-input">
+       <div class="text-box">
+         <div class="text-area">
+           <tr>
+           <output class="input" formControlName="netpaye" (keyup)="submitForm()">{{pdfssalaries?.netpaye}}</output><br>
+         </tr>
+       </div>
+     </div>
+   </div>
+ </td>
+
+ <td style="padding-left: 3px; padding-right: 1px;">
+  <label  class="label"  for="totalPercu" >Total Percu:</label>
+  <div class="group">
+    <div class="gray-input2">
+      <div >
+        <div class="text-area">
+     <input  class="input" type="text" formControlName="totalPercu" (keyup)="submitForm()"  required readonly>
+  </div>
+</div>
+</div>
+</div>
+</td>
+
+
+<td style="padding-left: 10px; padding-right: 1px;">
+<label  class="label"  for="chpatroniales">Charge Patronal:</label><br>
+   <div class="gray-input">
+     <div class="text-box">
+       <div class="text-area">
+         <tr>
+         <output class="input" (keyup)="submitForm()" formControlName="chpatroniales">{{pdfssalaries?.chpatroniales}}</output><br>
+       </tr>
+     </div>
+   </div>
+ </div>
+</td>
+
+</tr>
+<br>
+<tr>
+  <td style="padding-left: 10px; padding-right: 1px;">
+    <label  class="label"  for="chargeannexe" >Charge Annexe:</label>
+    <div class="group">
+      <div class="gray-input2">
+        <div >
+          <div class="text-area">
+       <input  class="input" type="text" formControlName="chargeannexe" (keyup)="submitForm()"  required readonly>
+    </div>
+  </div>
+  </div>
+  </div>
+  </td>
+
+  <td style="padding-left: 10px; padding-right: 1px;">
+    <label  class="label"  for="cout" >Cout:</label>
+    <div class="group">
+      <div class="gray-input2">
+        <div >
+          <div class="text-area">
+       <input  class="input" type="text" formControlName="cout" (keyup)="submitForm()"  required readonly>
+    </div>
+  </div>
+  </div>
+  </div>
+  </td>
+</tr>
+
+  </div>
+</div>
+</div>
+
+</form>
+</body>
+

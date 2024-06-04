@@ -1,0 +1,99 @@
+
+  <body>
+  <app-navigate></app-navigate>
+<br>
+<br>
+<br>
+<br>
+
+  <form [formGroup]="myForm" class='myfor'>
+
+
+<div class="login-wrap1">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Mission</label>
+    <div class="login-form">
+<br>
+
+<label  class="label" for="codeMission">Code Mission:</label><br>
+<div class="gray-input" >
+  <td style="display: inline-block; width: 100%;" > / {{ myForm.get('tjm')?.value }} / {{ myForm.get('datedebut')?.value }}</td>
+
+</div>
+<br>
+<tr>
+  <td>
+    <div class="group">
+    <label class="label" for="datedebut" style="padding-left: 10px; padding-right: 1px;">Date de début:</label>
+    <input class="input2" type="date" id="datedebut" name="datedebut" formControlName="datedebut" [ngModel]="currentDate | date:'yyyy-MM-dd'" required>
+    </div>
+  </td>
+
+  <td>
+    <div class="group">
+    <label class="label" for="datefin" style="padding-left: 10px; padding-right: 1px;">Date de fin:</label>
+    <input class="input2" type="date" id="datefin" name="datefin" formControlName="datefin" required>
+    </div>
+  </td>
+</tr>
+
+<br>
+<tr>
+
+    <div class="group">
+       <label class="label" for="tjm" style="padding-left: 10px; padding-right: 1px;">TJM:</label>
+       <input class="input" type="text" id="tjm" name="tjm" formControlName="tjm" required>
+    </div>
+
+
+</tr>
+<br><br>
+<tr>
+  <td>
+    <div class="group">
+  <label class="label" class="form-label" for="clientid"> Client : </label>
+  <select id="clientid" class="form-input" formControlName="clientid" (change)="fillCode()" required>
+    <option value="all">Toutes les Clients</option>
+    <option *ngFor="let client of Clients" [value]="client.id">{{ client.libelle }}</option>
+</select>
+</div>
+</td>
+
+
+
+
+
+<td>
+<div  class="group">
+  <label class="label" class="form-label" for="clientid"> Salaries : </label>
+  <mat-form-field>
+    <mat-label>salariesid</mat-label>
+    <mat-select [formControl]="users" multiple (change)="selectSalaries()">
+      <mat-select-trigger>
+        {{fillCode()}}
+      </mat-select-trigger>
+      @for (topping of Salariess; track topping) {
+    <mat-option [value]="topping.id">{{topping.nom}}.{{topping.prenom}}</mat-option>
+  }
+    </mat-select>
+  </mat-form-field>
+
+</div>
+</td>
+
+  </tr>
+    <br><br>
+
+
+
+                        <button (click)="save()" (click)="fillCode()">
+                          Sauvgarder
+                        </button>
+
+  </div>
+</div>
+</div>
+
+</form>
+</body>
+

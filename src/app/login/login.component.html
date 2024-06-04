@@ -1,0 +1,47 @@
+<body>
+  
+  <div class="context">
+   
+  </div>
+  <div class="area">
+  <div class="lead">
+  
+    <div class="wrapper">
+      <h1>login page</h1>
+    </div>
+  
+  </div>
+    <ul class="circles">
+      <form  class="body1" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+          <img src="../../assets/img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" name="username" [(ngModel)]="request.name" id="email" placeholder="username">
+        
+          <label for="psw"><b>Password</b></label>
+           <input type="password" name="password" [(ngModel)]="request.password" id="password" placeholder="password">
+        
+        
+        <button type="submit" id="go" (click)="submitForm()" >Login</button>
+        
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+        </form>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+    </ul>
+  </div >
+  </body>

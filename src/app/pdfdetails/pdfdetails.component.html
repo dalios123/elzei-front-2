@@ -1,0 +1,79 @@
+
+
+
+<body>
+  <app-navigate></app-navigate>
+
+
+  <section>
+
+
+    <div>
+      <input class="buttonDownload"  name="file" type="file" (change)="uploadpdf($event)" accept="application/pdf">
+    </div>
+
+
+
+    <!--for demo wrap-->
+    <h1>List des pdf</h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Matricule</th>
+            <th>Periode</th>
+            <th>NumSS</th>
+            <th>Chpatroniales</th>
+            <th>Nom</th>
+            <th>Emploi</th>
+            <th>Statut</th>
+            <th>Coefficient</th>
+            <th>Total des cotisations</th>
+            <th>Net a payer avant impot</th>
+            <th>Salairebrut</th>
+            <th>Netpaye</th>
+            <th>Action</th>
+
+
+
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let pdf of pdfs">
+            <td>{{ pdf.matricule }}</td>
+            <td>{{ pdf.periode }}</td>
+            <td>{{ pdf.numSS }}</td>
+            <td>{{ pdf.chpatroniales }}</td>
+            <td>{{ pdf.nom }}</td>
+            <td>{{ pdf.emploi }}</td>
+            <td>{{ pdf.statut }}</td>
+            <td>{{ pdf.coefficient }}</td>
+            <td>{{ pdf.totaldescotisationsetcontributions }}</td>
+            <td>{{ pdf.netapayeravantimpotsurlerevenu }}</td>
+            <td>{{ pdf.salairebrut }}</td>
+            <td>{{ pdf.netpaye }}</td>
+
+            <td>
+
+              <div class="input-div" style="font-size:20px;color:blue">
+                <input id="fileInput" name="file" type="file" (change)="uploadpdf($event)" accept="application/pdf" style="display:none;">
+                <label for="fileInput">
+                  <svg class="css-i6dzq1" stroke-linejoin="round" stroke-linecap="round" fill="none" stroke-width="2" stroke="#008000" height="24" width="24" viewBox="0 0 24 24">
+                    <path d="M12 3v12m0 0l-6-6m6 6l6-6M5 19h14" />
+                  </svg>
+                </label>
+              </div>
+
+
+           </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </section>
+</body>
+

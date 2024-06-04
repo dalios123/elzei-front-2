@@ -1,0 +1,215 @@
+.card {
+  --hsla: (110, 53%, 43%, 10%) 100%;
+  --black: hsl(240, 15%, 9%);
+  --paragraph: hsl(0, 0%, 0%);
+  --line: hsl(240, 9%, 17%);
+  --primary: hsl(115, 80%, 48%);
+  cursor: pointer;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 1rem;
+  width: 19rem;
+  background-color: rgb(73, 197, 16);
+  background-image: radial-gradient(
+      at 88% 40%,
+      hsla(240, 15%, 9%, 1) 0px,
+      transparent 85%
+    ),
+    radial-gradient(at 49% 30%, rgb(255, 255, 255) 0px, transparent 85%),
+    radial-gradient(at 49% 30%, rgb(255, 255, 255) 0px, transparent 85%),
+    radial-gradient(at 49% 30%, rgb(255, 255, 255) 0px, transparent 85%),
+    radial-gradient(at 49% 30%, rgb(255, 255, 255) 0px, transparent 85%),
+
+
+}
+
+.card .card__border {
+  overflow: hidden;
+  pointer-events: none;
+
+  position: absolute;
+  z-index: -10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  background-image: linear-gradient(
+    0deg,
+    hsla(110, 53%, 43%, 0) 100%
+    hsla(110, 53%, 43%, 0) 100%
+  );
+
+  border-radius: 1rem;
+}
+
+.card .card__border::before {
+  content: "";
+  pointer-events: none;
+
+  position: fixed;
+  z-index: 200;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%), rotate(0deg);
+  transform-origin: left;
+
+  width: 200%;
+  height: 10rem;
+
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card .card_title__container .card_title {
+  font-size: 2rem;
+  color: var(--white);
+
+}
+
+.card .card_title__container .card_paragraph {
+  margin-top: 0.25rem;
+  width: 65%;
+size-adjust: 100%;
+  font-size: 1.0rem;
+  color: var(--paragraph);
+}
+
+.card .line {
+  width: 100%;
+  height: 0.07rem;
+  background-color: var(--line);
+  border: none;
+}
+
+.card .card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card .card__list .card__list_item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card .card__list .card__list_item .check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--primary);
+
+  border-radius: 50%;
+}
+
+.card .card__list .card__list_item .check .check_svg {
+  width: 0.75rem;
+  height: 0.75rem;
+
+  fill: var(--black);
+}
+
+.card .card__list .card__list_item .list_text {
+  font-size: 0.75rem;
+  color: var(--white);
+}
+
+.card .button {
+  cursor: pointer;
+
+  padding: 0.5rem;
+  width: 100%;
+  background-image: linear-gradient(
+    0deg,
+    rgb(89, 233, 60) 0%,
+    rgb(145, 240, 107) 100%
+  );
+
+  font-size: 0.75rem;
+  color: var(--white);
+
+  border: 0;
+  border-radius: 9999px;
+  box-shadow: inset 0 -2px 25px -4px var(--white);
+}
+
+
+
+
+
+
+
+.ag-courses_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: 80%; /* Adjust space between cards */
+  align-items: center;
+
+}
+/*margin cards*/
+.ag-courses_item {
+  margin: 1.5rem; /* Add space around each card */
+  margin-left: 5%;
+}
+
+.card {
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+
+/*bar de simulation*/
+.radio-inputs {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  border-radius: 0.1rem;
+  background-color: #7ed957;
+  box-sizing: border-box;
+  font-size: 5px;
+  margin: 0 5%; /* Fix width on left and right sides */
+  padding: 0.5rem 1rem 0.5rem  1rem; /* Reduce top padding to 0.5rem */
+  font-family: "Montserrat", sans-serif;
+}
+
+.radio-inputs .radio input {
+  display: none;
+}
+
+h1{
+  border-radius: 0.1rem;
+  background-color: #7ed957;
+  box-sizing: border-box;
+  font-size: 1rem;
+  margin: 0 5%;
+  padding: 0.5rem 1rem;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease-in-out;
+
+}
+

@@ -1,0 +1,63 @@
+
+
+
+<body>
+  <app-navigate></app-navigate>
+
+
+  <section>
+
+
+
+
+
+    <!--for demo wrap-->
+    <h1>List des pdf</h1>
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Matricule</th>
+            <th>Periode</th>
+            <th>NumSS</th>
+            <th>Chpatroniales</th>
+            <th>Nom</th>
+            <th>Emploi</th>
+            <th>Statut</th>
+            <th>Coefficient</th>
+            <th>Total des cotisations</th>
+            <th>Net a payer avant impot</th>
+            <th>Salairebrut</th>
+            <th>Netpaye</th>
+
+
+
+
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let f of pdfs">
+            <td>{{ f.matricule }}</td>
+            <td>{{ f.periode }}</td>
+            <td>{{ f.numSS }}</td>
+            <td>{{ f.chpatroniales }}</td>
+            <td>{{ f.nom }}</td>
+            <td>{{ f.emploi }}</td>
+            <td>{{ f.statut }}</td>
+            <td>{{ f.coefficient }}</td>
+            <td>{{ f.totaldescotisationsetcontributions }}</td>
+            <td>{{ f.netapayeravantimpotsurlerevenu }}</td>
+            <td>{{ f.salairebrut }}</td>
+            <td>{{ f.netpaye }}</td>
+
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </section>
+</body>
+

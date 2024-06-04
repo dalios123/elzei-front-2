@@ -1,0 +1,115 @@
+
+<body>
+  <app-navigate></app-navigate>
+<br>
+<form [formGroup]="myForm" class='myfor'(ngSubmit)="submitForm()">
+
+
+
+  <div class="login-wrap1">
+    <div class="login-html">
+
+      <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab" readonly>CRA</label>
+
+      <div class="login-form">
+<br><br>
+<tr>
+    <div class="group">
+          <label class="label" class="form-label" for="missionid">Mission : </label>
+          <select id="missionid" class="form-input" formControlName="missionid"   readonly required>
+            <!-- Autres options pour les classes -->
+            <option value="all">Toutes les missions</option>
+            <option *ngFor="let mission of MissionS" [value]="mission.id">{{ mission.codemission }}
+          </option>
+          </select> </div><br><br>
+  </tr>
+
+<tr>
+  <td>
+
+       <tr>
+        <div class="group">
+          <label  class="label"  for="Salaries">Salaries:</label>
+          <input  class="input" type="text" formControlName="Salaries"    required readonly>
+       </div>
+      </td>
+
+
+
+
+
+    <td>
+
+     <tr>
+      <div class="group">
+        <label  class="label"  for="Client">Client:</label>
+        <input  class="input" type="text" formControlName="Client"     required readonly>
+     </div>
+   </tr>
+    </td>
+
+
+
+    <td>
+
+       <tr>
+        <div class="group">
+          <label  class="label"  for="tjm">TJM:</label>
+          <input  class="input" type="text" formControlName="tjm"  [value]="selectedMission?.tjm"   required readonly>
+       </div>
+     </tr>
+     </td>
+    </tr>
+    <tr>
+      <td>
+          <div class="group">
+             <label  class="label"  for="mois">Mois:</label>
+             <input  class="input" type="month" max="12" min="1" id="mois" name="mois" formControlName="mois" readonly  required>
+          </div>
+        </td>
+          <td>
+          <div class="group">
+            <label  class="label" for="nbjour">Nombre de jours:</label>
+            <input class="input"  type="text" id="nbjour" name="nbjour" formControlName="nbjour" required (keyup)="submitForm()"><br>
+          </div>
+        </td>
+
+        </tr>
+
+
+
+
+        <tr>
+          <td>
+                <div class="group">
+            <label class="label" for="montantH">montantH</label>
+            <input class="input" type="text" id="montantH" name="montantH" formControlName="montantH" (keyup)="submitForm()" readonly>
+          </div>
+        </td>
+
+
+
+      <td>
+          <div class="group">
+              <label class="label" for="montantTTC">montantTTC</label>
+              <input class="input" type="text" id="montantTTC" name="montantTTC" formControlName="montantTTC"  required readonly>
+          </div>
+        </td>
+      </tr>
+<br>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+</form>
+</body>

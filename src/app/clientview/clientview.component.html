@@ -1,0 +1,68 @@
+
+<body>
+  <app-navigate></app-navigate>
+  <br>
+  <br>
+  <br>
+  <br>
+<form [formGroup]="myForm" class='myfor'>
+
+<div class="login-wrap1">
+<div class="login-html">
+  <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Client</label>
+  <div class="login-form">
+<br><br>
+<tr>
+  <td>
+          <div class="group">
+          <label  class="label" for="libelle">Libellé:</label>
+          <input class="input" type="text" id="libelle" name="libelle" formControlName="libelle" [value]="selectedClient?.libelle"  required readonly >
+      </div>
+  </td>
+<td>
+      <div class="group">
+          <label  class="label" for="numtva">Numéro TVA:</label>
+          <input class="input" type="text" id="numtva" name="numtva" formControlName="numtva" [value]="selectedClient?.numtva"  required readonly>
+      </div>
+    </td>
+   </tr>
+   <br>
+      <label  class="label" for="pays"style="padding-left: 10px; padding-right: 1px;">Pays:</label>
+      <div class="countrys">
+          <mat-select-country class="input" formControlName="pays" style="padding-left: 10px; padding-right: 1px;"
+                              (onCountrySelected)="onCountrySelected($event)" >
+          </mat-select-country>
+        </div>
+       <tr>
+
+
+        <td>
+          <div class="group">
+              <label  class="label" for="address">Adresse:</label><br>
+
+            <td>
+
+              <input class="input" type="text"  id="ville" name="ville" placeholder="Ville" formControlName="ville"[(ngModel)]="ville" readonly><br>
+          </td>
+           <td>
+              <input class="input" type="text"  id="rue" name="rue"  placeholder="Rue"  formControlName="rue" [(ngModel)]="rue" readonly><br>
+          </td>
+           <td>
+              <input class="input" type="text" id="codePostal" name="codePostal" placeholder="Code-Postal"[(ngModel)]="codePostal" formControlName="codePostal" readonly><br>
+          </td>
+
+
+          </div>
+
+      </td>
+
+</tr>
+
+      </div>
+  </div>
+</div>
+
+
+
+</form>
+</body>

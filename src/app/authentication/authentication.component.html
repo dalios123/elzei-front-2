@@ -1,0 +1,65 @@
+<body>
+
+  <div class="context">
+
+  </div>
+  <div class="area">
+  <div class="lead">
+
+    <div class="wrapper">
+      <h1>Signup Page</h1>
+    </div>
+
+  </div>
+    <ul class="circles">
+      <form  class="body1" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+          <img src="../../assets/img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+        <div class="container">
+          <div class="box">
+            <select [(ngModel)]="request.role" name="role">
+              <option  value="Admin">Admin</option>
+              <option value="ConsultantRH">ConsultantRH</option>
+              <option value="Comercial">Comercial</option>
+              <option value="SupportTechnique">Support Technique</option>
+            </select>
+          </div>
+          <br>
+
+
+          <label for="uname"><b>Nom</b></label>
+          <input type="text" name="username"id="email" placeholder="username" [(ngModel)]="request.name">
+
+          <label for="Email"><b>Email</b></label>
+           <input type="text" name="Email"  id="Email" placeholder="Email" [(ngModel)]="request.email">
+
+          <label for="psw"><b>Mot de passe</b></label>
+           <input type="password" name="password"  id="password" placeholder="password" [(ngModel)]="request.password">
+
+           <label for="rpassword"><b>Confirmer Mot de passe</b></label>
+           <input type="password" name="rpassword"  id="rpassword" placeholder="password">
+           <br>
+           <br>
+        <button type="submit" id="go" (click)="submitForm()" >Signup</button>
+        <br>
+
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+            <span class="psw">page <a href="\login">Login --></a></span>
+        </div>
+        </form>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+    </ul>
+  </div >
+  </body>

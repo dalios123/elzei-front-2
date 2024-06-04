@@ -1,0 +1,266 @@
+body {
+	/*background-image: radial-gradient(at 300px 300px, rgba(60, 201, 95, 0.01) 0, #E9FFDB 80%), url('../../assets/Client2.jpg');*/
+	animation: animate-bg 70s infinite linear;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 100vh;
+	overflow-y: auto;
+  }
+
+  @keyframes animate-bg {
+	from {
+	  background-size: 100%;
+	  background-position: 0% 0%;
+	}
+	50% {
+	  background-size: 120%;
+	  background-position: 0% 20%;
+	}
+	to {
+	  background-size: 100%;
+	  background-position: 0% 0%;
+	}
+  }
+
+  *,
+  *:after,
+  *:before {
+	box-sizing: border-box;
+  }
+
+  .clearfix:after,
+  .clearfix:before {
+	content: '';
+  }
+
+  .clearfix:after {
+	clear: both;
+	display: block;
+  }
+
+  a {
+	color: inherit;
+	text-decoration: none;
+  }
+
+  /*container*/
+  .login-html {
+    top: 70%;
+    right: 0%;
+    width: 270%;
+    height: 220%;
+    bottom: 20%;
+    position: relative;
+    padding: 65px 90px 90px 90px;
+    border-radius: 0px;
+    margin: auto;
+    max-width: 800px;
+    min-height: 600px;
+    background-size: 100%;
+    background-color: rgba(255, 255, 255, 0.1); /* Applique une couleur de fond transparente */
+    box-shadow: 0px 106px 42px rgba(0, 0, 0, 0.01),
+    0px 59px 36px rgba(0, 0, 0, 0.05), 0px 26px 26px rgba(0, 0, 0, 0.09),
+    0px 7px 15px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-html .sign-in-htm,
+  .login-html .sign-up-htm {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+	transition: all .4s linear;
+  }
+
+  .login-html .sign-in,
+  .login-html .sign-up,
+  .login-form .group .check {
+	display: none;
+  }
+
+  .login-html .tab,
+  .login-form .group .label,
+  .login-form .group .button {
+	font-family: "HelveticaNeueLT Std Lt Cn", Sans-serif;
+  }
+
+  .login-html .tab {
+	font-size: 22px;
+	margin-right: 15px;
+	padding-bottom: 5px;
+	margin: 0 15px 10px 0;
+	display: inline-block;
+	border-bottom: 2px solid transparent;
+  }
+
+  .login-html .sign-in:checked + .tab,
+  .login-html .sign-up:checked + .tab {
+	color: #000000;
+	border-color: #7ed957;
+width: 20%;
+  }
+
+  .login-form {
+	min-height: 345px;
+	position: relative;
+	perspective: 1000px;
+	transform-style: preserve-3d;
+  }
+
+  .login-form .group {
+	margin-bottom: 0px;
+  }
+
+  /* Inputs */
+  .login-form .group .label,
+  .login-form .group .input,
+  .login-form .group .button {
+	width: 80%;
+	color: #000000;
+	display: block;
+	margin-right: 50px;
+	margin-left: -20px; /* Adjust margin as needed */
+	margin: auto;
+	font-family: "HelveticaNeueLT Std Lt Cn", Sans-serif;
+  }
+
+  .login-form .group .input,
+  .login-form .group .button {
+	border: none;
+	width: 90%;
+	padding: 15px 20px;
+	border-radius: 5px;
+	background: rgba(216, 216, 216, 0.5);
+	font-family: "HelveticaNeueLT Std Lt Cn", Sans-serif;
+  }
+
+  .login-form .group input[data-type="password"] {
+	-webkit-text-security: circle;
+  }
+
+  .login-form .group .label {
+	color: #000000;
+	font-size: 15px;
+	font-family: "HelveticaNeueLT Std Lt Cn", Sans-serif;
+	margin-left: 100%;
+	margin-left: 10%;
+  margin-bottom: .3rem;
+  }
+
+   /*button*/
+   button {
+    font-family: monospace;
+    background-color: #7ed957;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    width: 100px;
+    height: 45px;
+    transition: .3s;
+    width: 170px; /* Set the width of the button */
+    height: 50px; /* Set the height of the button */
+    font-size: 15px;
+    position: absolute; /* Set the position to absolute */
+    bottom: -70x; /* Set the distance from the bottom */
+    right: 250px; /* Set the distance from the right */
+    left: 29%;
+    font-family: "HelveticaNeueLT Std Lt Cn", Sans-serif;
+  }
+
+  button:hover {
+    background-color: #71C34E;
+    box-shadow: 0 0 0 5px #71C34E;
+    color: #000000;
+  }
+  .login-form .group label .icon {
+	width: 15px;
+	height: 15px;
+	border-radius: 2px;
+	position: relative;
+	display: inline-block;
+	background: rgba(255, 255, 255, .1);
+  }
+
+  .login-form .group label .icon:before {
+	left: 30px;
+	width: 50px;
+	bottom: 6px;
+	transform: scale(0) rotate(0);
+  }
+
+  .login-form .group label .icon:after {
+	top: 600px;
+	right: 0;
+	transform: scale(0) rotate(0);
+  }
+
+  .login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm {
+	transform: rotate(0);
+  }
+
+  .login-html .sign-up:checked + .tab + .login-form .sign-up-htm {
+	transform: rotate(0);
+  }
+
+  .hr {
+	height: 2px;
+	margin: 60px 0 50px 0;
+	background: rgba(255, 255, 255, .2);
+  }
+
+  /*tjm client salaries*/
+
+  .gray-input {
+	padding: 10px 20px;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.527);
+	width: 500px;
+  margin-bottom: .3rem;
+	background: rgba(216, 216, 216, 0.9);
+
+
+  }
+
+  /*section*/
+
+  .form-input {
+	width: 200px; /* Set the width of the select box */
+	height: 40px; /* Set the height of the select box */
+	padding: 5px; /* Add some padding */
+	font-size: 16px; /* Set the font size */
+	border: 1px solid rgba(255, 255, 255, .2); /* Add a border */
+	border-radius: 5px; /* Add some border radius */
+	background-color: rgba(255, 255, 255, 0.877); /* Set the background color */
+	background: rgba(216, 216, 216, 0.5);
+
+  }
+
+  /* Style for the options */
+  .form-input option {
+	font-size: 14px; /* Set the font size of options */
+	padding: 5px 10px; /* Add padding to options */
+
+  }
+
+  /* Optional hover effect for options */
+  .form-input option:hover {
+	background-color: rgba(255, 255, 255, 0.2); /* Change background color on hover */
+  }
+  .input2[type="date"] {
+    width: 178px; /* Définissez la largeur souhaitée */
+    color: #000000;
+    margin-right: 50px;
+    margin-left: -20px; /* Ajustez les marges au besoin */
+    margin: auto;
+    font-family: "HelveticaNeueLT Std Lt Cn", Sans-serif;
+    background: rgba(216, 216, 216, 0.9);
+    border: none;
+    padding: 14.2px 20px; /* Ajustez le rembourrage au besoin */
+    border-radius: 5px;
+    background: rgba(216, 216, 216, 0.5);
+
+  }

@@ -1,0 +1,119 @@
+
+
+<div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <img src="/assets/logooo.png" alt="Logo" width="100">
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="nav-links" (click)="deconnecter()" >
+    <a  >Deconnecter</a>
+  </div>
+
+
+  <div class="nav-links">
+    <a href="#">Configuration</a>
+    <div class="dropdown-content">
+      <a href="#" >gestion utilisateur</a>
+      <a href="#"  >gestion ref utilisateur</a>
+      <a href="#" >referance</a>
+    </div>
+  </div>
+
+
+  <div class="nav-links">
+    <a href="#">Gestion solde</a>
+    <div class="dropdown-content">
+      <a href="#">solde unit</a>
+      <a href="#">solde global</a>
+    </div>
+  </div>
+
+
+
+
+  <div class="nav-links">
+    <a  routerLinkActive="active">dashboard</a>
+    <div class="dropdown-content">
+      <a href="#" routerLink="/dashboard" routerLinkActive="active">dashboard</a>
+    </div>
+  </div>
+
+
+  <div class="nav-links">
+    <a routerLinkActive="active">Simulation</a>
+
+    <div class="dropdown-content">
+      <a href="/" routerLink="/home" routerLinkActive="active">Criéér simulations</a>
+
+      <a href="#" routerLink="/list" routerLinkActive="active">List-simulations</a>
+    </div>
+  </div>
+
+
+
+  <div class="nav-links">
+    <a routerLinkActive="active">Fiche de paie</a>
+    <div class="dropdown-content">
+      <a href="/" routerLink="/pdfdetails" routerLinkActive="active">Afficher</a>
+    </div>
+  </div>
+
+
+  <div class="nav-links">
+    <a routerLinkActive="active">Données mensuelles</a>
+    <div class="dropdown-content">
+      <a href="/" routerLink="/monthly-data" routerLinkActive="active">Criéér données mensuelles</a>
+      <a href="/" routerLink="/monthlydatalist" routerLinkActive="active">List des données mensuelles</a>
+
+    </div>
+  </div>
+
+  <div class="nav-links">
+    <a routerLinkActive="active">Salarie</a>
+    <div class="dropdown-content">
+      <a href="/" routerLink="/salaries" routerLinkActive="active">Criéér Salarie</a>
+      <a href="#" routerLink="/search" routerLinkActive="active">list-salaries</a>
+    </div>
+  </div>
+
+
+
+
+  <div class="nav-links">
+    <a routerLinkActive="active">Client</a>
+    <div class="dropdown-content">
+      <a href="/" routerLink="/Client" routerLinkActive="active">Criéér Client</a>
+      <a href="/" routerLink="/clientlist" routerLinkActive="active">List-Clients</a>
+    </div>
+  </div>
+
+
+
+
+  <div class="nav-links">
+    <a routerLinkActive="active">Mission</a>
+    <div class="dropdown-content">
+      <a href="/" routerLink="/Mission" routerLinkActive="active">Criéér Mission</a>
+      <a href="#" routerLink="/missionlist" routerLinkActive="active">List-mission</a>
+    </div>
+  </div>
+
+
+
+  <div class="nav-links">
+    <a  routerLinkActive="active">CRA</a>
+    <div class="dropdown-content">
+      <a href="/" routerLink="/CRA" routerLinkActive="active">Criéér CRA</a>
+      <a href="#" routerLink="/cralist" routerLinkActive="active">List-cra</a>
+    </div>
+  </div>
+
+</div>

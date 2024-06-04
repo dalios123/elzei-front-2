@@ -1,0 +1,58 @@
+<body>
+  <app-navigate></app-navigate>
+  <router-outlet></router-outlet><br><br>
+  <div class="radio-inputs">
+      <h1>List des Simulation</h1>
+    <label class="radio">
+      <input type="radio" name="radio" />
+
+    </label>
+  </div>
+
+  <div class="ag-format-container">
+      <div class="ag-courses_box">
+          <div class="ag-courses_item" *ngFor="let simulateur of simulateurs">
+              <a class="ag-courses-item_link" (click)="viewSimulateurDetails(simulateur)">
+                  <div class="ag-courses-item_bg"></div>
+                  <div class="card">
+                      <div class="card__border"></div>
+                      <div class="card_title__container">
+                        <a  class="simulateur-info1">Simulation  {{ simulateur.id }}</a><br>
+                                  <p class="card_paragraph">
+                             avec un cout  {{ simulateur.cout }}
+                          </p>
+                      </div>
+                      <hr class="line" />
+                      <ul class="card__list">
+                          <li class="card__list_item">
+                              <span class="check">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="check_svg">
+                                      <path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"></path>
+                                  </svg>
+                              </span>
+                              <span class="list_text"> solde: {{ simulateur.solde }} €</span>
+                          </li>
+                          <li class="card__list_item">
+                              <span class="check">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="check_svg">
+                                      <path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"></path>
+                                  </svg>
+                              </span>
+                              <span class="list_text">total Percu: {{ simulateur.totalPercu }} €</span>
+                          </li>
+                          <li class="card__list_item">
+                              <span class="check">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="check_svg">
+                                      <path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"></path>
+                                  </svg>
+                              </span>
+                              <span class="list_text">extra Possible: {{ simulateur.extraPossibleHorsPAS }} €</span>
+                          </li>
+
+                      </ul>
+                  </div>
+              </a>
+          </div>
+      </div>
+  </div>
+</body>

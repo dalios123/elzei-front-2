@@ -1,0 +1,170 @@
+<body>
+
+    <app-navigate></app-navigate>
+    <br>
+    <br>
+
+    <form [formGroup]="myForm" class='myfor' (ngSubmit)="updateAddress()">
+      <div class="login-wrap1">
+        <div class="login-html">
+          <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Salarie</label>
+          <div class="login-form"><br>
+
+
+                        <tr>
+                          <td>
+                          <div class="group">
+                          <label class="label" for="prenom">Prénom:</label>
+                          <input class="input" type="text" name="prenom" formControlName="prenom" required>
+                          </div>
+                        </td>
+                      <td>
+                          <div class="group">
+                          <label class="label" for="nom">Nom:</label>
+                          <input class="input"  type="text" name="nom" formControlName="nom" required>
+                          </div>
+                        </td>
+                      <td style="padding-left: 13px; padding-right: 26px;">
+                            <div class="group">
+                          <label class="label" for="dateNaiss">date de Naissance:</label>
+                          <input class="input2"  type="date" name="dateNaiss" formControlName="dateNaiss" required >
+                            </div>
+                      </td>
+                        </tr><br>
+
+
+                        <tr>
+                          <label  class="label" for="pays" style="padding-left: 10px; padding-right: 1px;">Pays:</label><br>
+                          <mat-select-country class="input" style="padding-left: 10px; padding-right: 1px;" (onCountrySelected)="onCountrySelected($event)">
+                          </mat-select-country>
+                          <tr>
+
+
+
+                            <tr>
+                        <td>
+                          <div class="group">
+                              <label  class="label" for="addresse">Adresse:</label>
+                              <td>
+
+                              <input class="input" type="text"  id="ville" name="ville" placeholder="Ville" formControlName="ville" required (input)="updateAddress()">
+                          </td>
+                           <td>
+                              <input class="input" type="text"  id="rue" name="rue"  placeholder="Rue" required formControlName="rue" required (input)="updateAddress()">
+                          </td>
+                           <td>
+                              <input class="input" type="text" id="codePostal" name="codePostal" placeholder="Code-Postal"  formControlName="codePostal" required (input)="updateAddress()">
+                          </td>
+                          </div>
+                      </td>
+                    </tr>
+                      <br>
+
+
+
+                        <tr>
+                          <td>
+                          <div class="group">
+                          <label class="label" for="matricule">Matricule:</label>
+                          <input class="input"  type="text" name="matricule" formControlName="matricule" required>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="group">
+                            <label class="label" for="numSS">NumSS:</label>
+                            <input class="input"  type="text" name="numSS" formControlName="numSS" required>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="group">
+                            <label class="label" for="emploi">Emploi:</label>
+                            <input class="input"  type="text" name="emploi" formControlName="emploi" required>
+                          </div>
+                        </td>
+                        </tr>
+                        <br>
+
+
+                        <tr>
+                          <td style="padding-left: 15px; padding-right: 27px;">
+                          <div class="group">
+                        <label class="label" for="dateEntre" >Date d'entrée:</label>
+                         <input class="input2" type="date" name="dateEntre" formControlName="dateEntre" [ngModel]="currentDate | date:'yyyy-MM-dd'" required>
+                        </div>
+                      <br>
+                    <td>
+                          <div class="group">
+                          <label class="label" for="dateSortie">Date de sortie:</label>
+                          <input class="input2"  type="date"  name="dateSortie" formControlName="dateSortie" required>
+                        </div>
+                      </td>
+
+
+                        </tr><br>
+
+
+
+                        <tr>
+
+
+                          <td>
+                            <div class="group">
+                          <label class="label" for="position">Position:</label>
+
+                              <input class="input"  type="text" name="position" formControlName="position" required
+                                  (input)="updateCoefficient($event)">
+
+
+                        </div>
+                      </td>
+
+
+                          <td>
+
+                          <div class="group">
+                             <label class="label" for="coefficient">Coefficient:</label>
+
+                            <ng-container *ngIf="coefficientOptions.length> 0; else coefInput">
+                                <select name="coefficient" formControlName="coefficient" class='custom-select'>
+                                    <option *ngFor="let option of coefficientOptions" [value]="option">{{ option }}</option>
+                                </select>
+                            </ng-container>
+                            <ng-template #coefInput>
+                                <input class="input"  type="text" name="coefficient" formControlName="coefficient" required>
+                            </ng-template>
+
+                          </div>
+                        </td>
+                         <td>
+                          <div class="group">
+                        <label class="label" for="statut">Statut:</label>
+
+                          <textarea class="input"  type="text" name="statut" formControlName="statut" autocomplete="off" readonly></textarea>
+                          <span *ngIf="myForm.get('statut')?.errors?.['paragraph']" class="paragraph">{{ myForm.get('statut')?.errors?.['paragraph'] }}</span>
+
+
+                          </div>
+                        </td>
+                        </tr>
+
+
+<br>
+
+
+
+                        <button (click)="save()">
+                          Sauvgarder
+                        </button>
+
+
+
+                  </div>
+                </div>
+
+              </div>
+
+
+            </form>
+            <br>
+            </body>
+
